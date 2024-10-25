@@ -1,0 +1,189 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: gold;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 400px;
+    margin: auto;
+    background: #333;
+    padding: 20px 30px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.logo {
+    width: 150px;
+    height: 70px;
+}
+
+h1 {
+    text-align: center;
+    margin: 20px;
+    padding-bottom: 10px;
+    font-size: 1.5em;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    background-color: #555;
+    color: gold;
+    border: 1px solid #777;
+    box-sizing: border-box;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.button-container button {
+    width: 48%;
+    background-color: #28a745; /* Color verde */
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    margin-right: 10px; /* Añade separación entre botones */
+}
+
+.button-container button:last-child {
+    margin-right: 0; /* Elimina el margen del último botón */
+}
+
+.button-container button:hover {
+    background-color: #218838; /* Color verde más oscuro */
+}
+
+.historial-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none; /* Sin fondo */
+    border: none; /* Sin borde */
+    color: gold; /* Color dorado */
+    font-size: 1.5em; /* Tamaño del icono */
+    cursor: pointer; /* Cambia el cursor al pasar el ratón */
+}
+
+.historial-btn:hover {
+    color: #fff; /* Color al pasar el ratón */
+}
+
+.llave-btn {
+    background-color: #000; /* Cambia el fondo del botón de la llave a negro */
+    color: gold; /* Color del icono */
+    border: 1px solid #777; /* Ajusta el borde si es necesario */
+    padding: 5px; /* Añade padding para mejor apariencia */
+    border-radius: 5px; /* Borde redondeado */
+    cursor: pointer; /* Cambia el cursor al pasar el ratón */
+}
+
+#resultado {
+    margin-top: 40px;
+    font-weight: bold;
+    color: gold;
+    text-align: center;
+}
+
+#historial {
+    margin-top: 20px;
+    color: gold;
+    background: #444;
+    padding: 10px;
+    border-radius: 5px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+    background-color: #333;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 5px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.resultado-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#resultadoLiquidacion {
+    font-weight: bold;
+    color: gold;
+    margin-bottom: 10px;
+}
+
+/* Media queries para diseño responsivo */
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+    .logo {
+        width: 100px;
+        height: auto;
+    }
+    h1 {
+        font-size: 1.2em;
+    }
+    input {
+        font-size: 0.9em;
+    }
+    .button-container button {
+        font-size: 0.9em;
+    }
+    #resultado, #resultadoLiquidacion {
+        font-size: 1.2em;
+    }
+}
+
+/* Estilo para el texto de copyright */
+.copyright {
+    position: fixed;
+    bottom: 10px;
+    right: 30px;
+    color: gold;
+    font-weight: bold;
+    font-size: 1em;
+}

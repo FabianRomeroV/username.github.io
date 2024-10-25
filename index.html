@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Liquidación</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="https://pomafort.com/wp-content/uploads/2023/12/PDF_LOGO_POMAFORT1.png" alt="Logo" class="logo">
+            <h1>PRECIO POR TONELADA</h1>
+            <form id="liquidacionForm">
+                <label for="leyOz">Ley Oz:</label>
+                <input type="number" step="0.0001" id="leyOz" placeholder="Ingrese la ley en oz" required>
+                
+                <label for="recuperacion">Recuperación %:</label>
+                <input type="number" id="recuperacion" placeholder="Ingrese porcentaje de recuperación" required>
+                
+                <label for="precioInter">Precio Inter $:</label>
+                <input type="number" step="0.01" id="precioInter" placeholder="Ingrese el precio inter" required>
+                
+                <div id="hiddenFields" style="display: none;">
+                    <label for="penalizacion">Penalización $:</label>
+                    <input type="number" value="80" id="penalizacion" readonly>
+                    
+                    <label for="factor">Factor:</label>
+                    <input type="number" value="1.1023" id="factor" readonly>
+                </div>
+
+                <label for="maquila">Maquila $:</label>
+                <input type="number" step="0.01" id="maquila" placeholder="Ingrese la maquila" required>
+
+                <div class="button-container">
+                    <button type="submit">Calcular</button>
+                    <button type="button" id="reiniciar">Reiniciar</button>
+                    <button type="button" id="toggleKey" style="margin-left: 10px;">🔑</button>
+                </div>
+            </form>
+
+            <div id="resultado">PRECIO($/TM): </div>
+            
+            <label for="tonHumedas">Ton.Humedas:</label>
+            <input type="number" step="0.001" id="tonHumedas" placeholder="Ingrese Ton.Humedas" required>
+            
+            <label for="porcentajeH2O">% H2O:</label>
+            <input type="number" step="0.01" id="porcentajeH2O" placeholder="Ingrese porcentaje de % H2O" required>
+
+            <div class="resultado-container">
+                <h2 id="resultadoLiquidacion">LIQUIDACIÓN: $0.00</h2>
+                <button type="button" id="abrirHistorial" class="historial-btn">🕒</button>
+                <button type="button" id="exportarHistorial">Exportar Historial</button>
+            </div>
+        </div>
+    </div>
+    
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Historial de Cálculos</h2>
+            <div id="historial"></div>
+        </div>
+    </div>
+    
+    <div class="copyright">©NERV</div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
